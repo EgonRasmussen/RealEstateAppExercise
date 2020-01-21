@@ -6,6 +6,10 @@
              mc:Ignorable="d"
              x:Class="RealEstateApp.PropertyListPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" />
+    </ContentPage.ToolbarItems>
+    
     <StackLayout>
         <ListView
             x:Name="ItemsListView"
@@ -14,7 +18,7 @@
             HasUnevenRows="true"
             IsPullToRefreshEnabled="true"
             IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-          
+            ItemTapped="ItemsListView_ItemTapped"
             ItemsSource="{Binding Properties}"
             RefreshCommand="{Binding LoadItemsCommand}"
             VerticalOptions="FillAndExpand">

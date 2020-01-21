@@ -1,9 +1,7 @@
 ﻿using RealEstateApp.Services;
 using RealEstateApp.Services.Repository;
-using System;
 using TinyIoC;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 
 namespace RealEstateApp
@@ -17,7 +15,6 @@ namespace RealEstateApp
             var container = TinyIoCContainer.Current;
             container.Register<IRepository, MockRepository>();
 
-            //MainPage = new PropertyListPage(container.Resolve<IRepository>());
             MainPage = new MainPage();
         }
 

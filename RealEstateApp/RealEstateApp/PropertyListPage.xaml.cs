@@ -1,11 +1,7 @@
 ﻿using RealEstateApp.Models;
 using RealEstateApp.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,17 +10,20 @@ namespace RealEstateApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PropertyListPage : ContentPage
     {
-        public List<Property> Properties { get; set; }
+        public List<Property> Properties { get; set; }  
 
-        IRepository _mockRepository;
-        public PropertyListPage(IRepository mockRepository)
+        public PropertyListPage()
         {
             InitializeComponent();
 
-            _mockRepository = mockRepository;
+            IRepository MockRepository = TinyIoCContainer.Current.Resolve<IRepository>();
+            Properties = MockRepository.GetProperties();
+            BindingContext = this;
+        }
 
-            Properties = _mockRepository.GetProperties();
-            this.BindingContext = this;
+        private async void ItemsListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            await Navigation.PushAsync(new PropertyDetailPage(e.Item as Property));
         }
     }
 }
