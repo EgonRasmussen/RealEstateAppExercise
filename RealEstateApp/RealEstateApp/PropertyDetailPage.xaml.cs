@@ -47,11 +47,16 @@ namespace RealEstateApp
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChangedEvent;
 
         public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChangedEvent?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private async void EditProperty_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new AddEditPropertyPage(Property));
         }
     }
 }

@@ -8,7 +8,7 @@
              Title="{Binding Property.Address}">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding EditPropertyCommand}" Text="Edit" />
+        <ToolbarItem Clicked="EditProperty_Clicked"  Text="Edit" />
     </ContentPage.ToolbarItems>
 
     <ScrollView VerticalOptions="FillAndExpand">

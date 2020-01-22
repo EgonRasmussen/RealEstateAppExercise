@@ -1,14 +1,14 @@
-﻿using System;
+﻿using RealEstateApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RealEstateApp.Models;
+using System.Reactive.Subjects;
 
 namespace RealEstateApp.Services.Repository
 {
     public class MockRepository : IRepository
     {
+        private readonly Subject<Property> _propertyUpdatedSubject = new Subject<Property>();
         private List<Agent> _agents;
         private List<Property> _properties;
 
@@ -30,7 +30,22 @@ namespace RealEstateApp.Services.Repository
 
         public void SaveProperty(Property property)
         {
-            throw new NotImplementedException();
+            if (property.Id == null) throw new NullReferenceException("Property.Id cannot be null");
+
+            var existing = _properties.FirstOrDefault(x => x.Id == property.Id);
+
+            if (existing == null)
+            {
+                _properties.Add(property);
+            }
+            else
+            {
+                var existingIndex = _properties.IndexOf(existing);
+
+                _properties[existingIndex] = property;
+            }
+
+            _propertyUpdatedSubject.OnNext(property);
         }
 
         private void LoadProperties()

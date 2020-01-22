@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:RealEstateApp.Converters"
+             xmlns:u="clr-namespace:RealEstateApp.Utils"
+             mc:Ignorable="d"
+             x:Class="RealEstateApp.AddEditPropertyPage"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding CancelCommand}" Text="Cancel" />
+        <ToolbarItem Clicked="SaveProperty_Clicked" Text="Save" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#E8E8E8">
+            <Label
+                BackgroundColor="{Binding StatusColor}"
+                IsVisible="{Binding StatusMessage, Converter={converters:StringBoolConverter}}"
+                Text="{Binding StatusMessage}"
+                TextColor="{Binding StatusColor, Converter={converters:ForegroundColorConverter}}" />
+            <ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout Padding="15" Spacing="20">
+                    <Label
+                        FontSize="Medium"
+                    Text="Address" />
+                    <Entry FontSize="Medium" Text="{Binding Property.Address}" />
+                    <Label
+                        FontSize="Medium"
+                        Text="Price" />
+                    <Entry FontSize="Medium"
+                           Text="{Binding Property.Price, Converter={converters:NullableIntConverter}}" />
+                    <Label
+                        FontSize="Medium"
+                        
+                        Text="Bedrooms" />
+                    <Entry
+                        FontSize="Medium"
+                        Keyboard="Numeric"
+                        ReturnType="Next"
+                        Text="{Binding Property.Beds, Converter={converters:NullableIntConverter}}" />
+                    <Label
+                        FontSize="Medium"
+                        Text="Bathrooms" />
+                    <Entry
+                        FontSize="Medium"
+                        Keyboard="Numeric"
+                        ReturnType="Next"
+                        Text="{Binding Property.Baths, Converter={converters:NullableIntConverter}}" />
+                    <Label
+                        FontSize="Medium"
+                        Text="Parking" />
+                    <Entry
+                        FontSize="Medium"
+                        Keyboard="Numeric"
+                        ReturnType="Next"
+                        Text="{Binding Property.Parking, Converter={converters:NullableIntConverter}}" />
+                    <Label
+                        FontSize="Medium"
+                        Style="{StaticResource IconFont}"
+                        Text="Land Size" />
+                    <Entry
+                        FontSize="Medium"
+                        Keyboard="Numeric"
+                        ReturnType="Next"
+                        Text="{Binding Property.LandSize, Converter={converters:NullableIntConverter}}" />
+                    <Label
+                        FontSize="Medium"
+                        Text="Description" />
+                    <Editor
+                        Margin="0"
+                        FontSize="Medium"
+                        HeightRequest="50"
+                        Text="{Binding Property.Description}" />
+                    <Label
+                        FontSize="Medium"
+                        Text="Agent" />
+                    <Picker
+                        FontSize="Medium"
+                        ItemDisplayBinding="{Binding Name}"
+                        ItemsSource="{Binding Agents}"
+                        SelectedItem="{Binding SelectedAgent}" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
