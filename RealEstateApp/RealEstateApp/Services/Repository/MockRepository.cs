@@ -2,13 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive.Subjects;
 
 namespace RealEstateApp.Services.Repository
 {
     public class MockRepository : IRepository
     {
-        private readonly Subject<Property> _propertyUpdatedSubject = new Subject<Property>();
         private List<Agent> _agents;
         private List<Property> _properties;
 
@@ -44,8 +42,6 @@ namespace RealEstateApp.Services.Repository
 
                 _properties[existingIndex] = property;
             }
-
-            _propertyUpdatedSubject.OnNext(property);
         }
 
         private void LoadProperties()
