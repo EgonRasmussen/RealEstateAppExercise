@@ -10,7 +10,7 @@
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding CancelCommand}" Text="Cancel" />
+        <ToolbarItem Clicked="CancelSave_Clicked" Text="Cancel" />
         <ToolbarItem Clicked="SaveProperty_Clicked" Text="Save" />
     </ContentPage.ToolbarItems>
 
@@ -25,17 +25,16 @@
                 <StackLayout Padding="15" Spacing="20">
                     <Label
                         FontSize="Medium"
-                    Text="Address" />
+                    Text="Address*" />
                     <Entry FontSize="Medium" Text="{Binding Property.Address}" />
                     <Label
                         FontSize="Medium"
-                        Text="Price" />
+                        Text="Price*" />
                     <Entry FontSize="Medium"
                            Text="{Binding Property.Price, Converter={converters:NullableIntConverter}}" />
                     <Label
-                        FontSize="Medium"
-                        
-                        Text="Bedrooms" />
+                        FontSize="Medium"                   
+                        Text="Bedrooms*" />
                     <Entry
                         FontSize="Medium"
                         Keyboard="Numeric"
@@ -76,7 +75,7 @@
                         Text="{Binding Property.Description}" />
                     <Label
                         FontSize="Medium"
-                        Text="Agent" />
+                        Text="Agent*" />
                     <Picker
                         FontSize="Medium"
                         ItemDisplayBinding="{Binding Name}"

@@ -1,10 +1,7 @@
 ﻿using RealEstateApp.Models;
 using RealEstateApp.Services;
-using RealEstateApp.Utils;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,11 +11,11 @@ namespace RealEstateApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddEditPropertyPage : ContentPage
     {
-        public ObservableCollection<Agent> Agents { get; }
-
         private IRepository MockRepository;
 
-        #region CHANGE NOTIFICATION
+        #region PROPERTIES
+        public ObservableCollection<Agent> Agents { get; }
+
         private Property _property;
         public Property Property
         {
@@ -31,7 +28,6 @@ namespace RealEstateApp
                     SelectedAgent = Agents.FirstOrDefault(x => x.Id == _property?.AgentId);
                 }
                
-                RaisePropertyChanged();
             }
         }
     
@@ -42,46 +38,17 @@ namespace RealEstateApp
             get => _selectedAgent;
             set
             {
-                if (_selectedAgent == value) return;
                 if (Property != null)
                 {
                     _selectedAgent = value;
                     Property.AgentId = _selectedAgent?.Id;
-                }
-                    
+                }                 
             }
         }
 
-        private string _statusMessage;
+        public string StatusMessage { get; set; }
 
-        public string StatusMessage
-        {
-            get => _statusMessage;
-            set
-            {
-                _statusMessage = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        private Color _statusColor = Color.White;
-
-        public Color StatusColor
-        {
-            get => _statusColor;
-            set
-            {
-                _statusColor = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChangedEvent;
-
-        public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            //PropertyChangedEvent?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        public Color StatusColor { get; set; } = Color.White;
         #endregion
 
         public AddEditPropertyPage(Property property = null)
@@ -101,9 +68,22 @@ namespace RealEstateApp
                 Title = "Edit Property";
                 Property = property;
             }
-
-            
+         
             BindingContext = this;
+        }
+
+        private async void SaveProperty_Clicked(object sender, System.EventArgs e)
+        {
+            if (IsValid() == false)
+            {
+                StatusMessage = "Please fill in all required fields";
+                StatusColor = Color.Red;
+            }
+            else
+            {
+                MockRepository.SaveProperty(Property);
+                await Navigation.PopToRootAsync();
+            }   
         }
 
         public bool IsValid()
@@ -117,16 +97,8 @@ namespace RealEstateApp
             return true;
         }
 
-        private async void SaveProperty_Clicked(object sender, System.EventArgs e)
+        private async void CancelSave_Clicked(object sender, System.EventArgs e)
         {
-            if (IsValid() == false)
-            {
-                StatusMessage = "Please fill in all required fields";
-                StatusColor = Color.Red;
-            }
-
-            MockRepository.SaveProperty(Property);
-
             await Navigation.PopToRootAsync();
         }
     }

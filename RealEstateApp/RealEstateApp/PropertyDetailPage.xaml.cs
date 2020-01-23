@@ -51,7 +51,7 @@ namespace RealEstateApp
 
         public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {
-            PropertyChangedEvent?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            //PropertyChangedEvent?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private async void EditProperty_Clicked(object sender, System.EventArgs e)

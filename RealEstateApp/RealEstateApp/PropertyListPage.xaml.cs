@@ -31,6 +31,7 @@ namespace RealEstateApp
         {
             await Navigation.PushAsync(new AddEditPropertyPage());
         }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
