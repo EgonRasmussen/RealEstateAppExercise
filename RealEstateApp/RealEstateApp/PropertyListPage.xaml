@@ -17,10 +17,11 @@
             CachingStrategy="RecycleElement"
             HasUnevenRows="true"
             IsPullToRefreshEnabled="true"
+            RefreshControlColor =" Color.Red"
             IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+            Refreshing="OnRefresh"
             ItemTapped="ItemsListView_ItemTapped"
             ItemsSource="{Binding Properties}"
-            RefreshCommand="{Binding LoadItemsCommand}"
             VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>

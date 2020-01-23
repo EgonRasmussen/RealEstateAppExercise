@@ -1,8 +1,6 @@
 ﻿using RealEstateApp.Models;
 using RealEstateApp.Services;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,6 +13,7 @@ namespace RealEstateApp
         public PropertyDetailPage(Property property)
         {
             InitializeComponent();
+
             Property = property;
 
             IRepository MockRepository = TinyIoCContainer.Current.Resolve<IRepository>();
@@ -23,36 +22,9 @@ namespace RealEstateApp
             BindingContext = this;
         }
 
-        private Agent _agent;
+        public Agent Agent { get; set; }
 
-        public Agent Agent
-        {
-            get => _agent;
-            set
-            {
-                _agent = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        private Property _property;
-
-        public Property Property
-        {
-            get => _property;
-            set
-            {
-                _property = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChangedEvent;
-
-        public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            //PropertyChangedEvent?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        public Property Property { get; set; }
 
         private async void EditProperty_Clicked(object sender, System.EventArgs e)
         {

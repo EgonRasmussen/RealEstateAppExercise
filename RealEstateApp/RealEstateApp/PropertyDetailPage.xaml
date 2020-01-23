@@ -134,7 +134,6 @@
                         Text="{Binding Agent.Phone}" />
                 </Grid>
             </Grid>
-
         </Grid>
     </ScrollView>
 </ContentPage>
