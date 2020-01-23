@@ -80,7 +80,7 @@ namespace RealEstateApp
 
         public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {
-            PropertyChangedEvent?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            //PropertyChangedEvent?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
@@ -89,6 +89,7 @@ namespace RealEstateApp
             InitializeComponent();
 
             MockRepository = TinyIoCContainer.Current.Resolve<IRepository>();
+            Agents = new ObservableCollection<Agent>(MockRepository.GetAgents());
 
             if (property == null)
             {
@@ -98,10 +99,10 @@ namespace RealEstateApp
             else
             {
                 Title = "Edit Property";
-
+                Property = property;
             }
 
-            Agents = new ObservableCollection<Agent>(MockRepository.GetAgents());
+            
             BindingContext = this;
         }
 

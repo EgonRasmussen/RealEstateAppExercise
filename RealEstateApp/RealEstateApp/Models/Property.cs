@@ -1,9 +1,15 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
+// Install-Package Fody
+// Install-Package PropertyChanged.Fody
+// Tilføj attribute:  [AddINotifyPropertyChangedInterface]
+
 namespace RealEstateApp.Models
 {
+    [AddINotifyPropertyChangedInterface]
     public class Property
     {
         public Property()

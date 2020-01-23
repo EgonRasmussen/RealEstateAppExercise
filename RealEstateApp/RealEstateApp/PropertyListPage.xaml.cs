@@ -18,6 +18,8 @@ namespace RealEstateApp
             InitializeComponent();
 
             MockRepository = TinyIoCContainer.Current.Resolve<IRepository>();
+            Properties = new ObservableCollection<Property>(MockRepository.GetProperties());
+            BindingContext = this; 
         }
 
         private async void ItemsListView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -33,10 +35,7 @@ namespace RealEstateApp
         {
             base.OnAppearing();
 
-            Properties = new ObservableCollection<Property>(MockRepository.GetProperties());
-            BindingContext = null;
-            BindingContext = this;
-           
+            Properties = new ObservableCollection<Property>(MockRepository.GetProperties());       
         }
     }
 }
