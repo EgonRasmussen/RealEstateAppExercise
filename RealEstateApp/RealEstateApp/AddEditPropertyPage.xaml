@@ -25,16 +25,19 @@
                 <StackLayout Padding="15" Spacing="20">
                     <Label
                         FontSize="Medium"
-                        Text="Address*" />
+                        Style="{StaticResource IconFont}"
+                        Text="&#xf015; Address*" />
                     <Entry FontSize="Medium" Text="{Binding Property.Address}" />
                     <Label
                         FontSize="Medium"
-                        Text="Price*" />
+                        Style="{StaticResource IconFont}"
+                        Text="&#xf02b; Price*" />
                     <Entry FontSize="Medium"
                            Text="{Binding Property.Price, Converter={converters:NullableIntConverter}}" />
                     <Label
-                        FontSize="Medium"                   
-                        Text="Bedrooms*" />
+                        FontSize="Medium"
+                        Style="{StaticResource IconFont}"
+                        Text="&#xf236; Bedrooms*" />
                     <Entry
                         FontSize="Medium"
                         Keyboard="Numeric"
@@ -42,7 +45,8 @@
                         Text="{Binding Property.Beds, Converter={converters:NullableIntConverter}}" />
                     <Label
                         FontSize="Medium"
-                        Text="Bathrooms" />
+                        Style="{StaticResource IconFont}"
+                        Text="&#xf2cd; Bathrooms" />
                     <Entry
                         FontSize="Medium"
                         Keyboard="Numeric"
@@ -50,7 +54,8 @@
                         Text="{Binding Property.Baths, Converter={converters:NullableIntConverter}}" />
                     <Label
                         FontSize="Medium"
-                        Text="Parking" />
+                        Style="{StaticResource IconFont}"
+                        Text="&#xf1b9; Parking" />
                     <Entry
                         FontSize="Medium"
                         Keyboard="Numeric"
@@ -59,7 +64,7 @@
                     <Label
                         FontSize="Medium"
                         Style="{StaticResource IconFont}"
-                        Text="Land Size" />
+                        Text="&#xf0c8; Land Size (&#x33a1;)" />
                     <Entry
                         FontSize="Medium"
                         Keyboard="Numeric"
@@ -67,7 +72,8 @@
                         Text="{Binding Property.LandSize, Converter={converters:NullableIntConverter}}" />
                     <Label
                         FontSize="Medium"
-                        Text="Description" />
+                        Style="{StaticResource IconFont}"
+                        Text="&#xf15c; Description" />
                     <Editor
                         Margin="0"
                         FontSize="Medium"
@@ -75,7 +81,8 @@
                         Text="{Binding Property.Description}" />
                     <Label
                         FontSize="Medium"
-                        Text="Agent*" />
+                        Style="{StaticResource IconFont}"
+                        Text="&#xf508; Agent*" />
                     <Picker
                         FontSize="Medium"
                         ItemDisplayBinding="{Binding Name}"
