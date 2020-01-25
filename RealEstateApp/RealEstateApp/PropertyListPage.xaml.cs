@@ -11,15 +11,15 @@ namespace RealEstateApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PropertyListPage : ContentPage
     {
-        IRepository MockRepository;
-        public ObservableCollection<Property> Properties { get; set; }  
+        IRepository Repository;
+        public ObservableCollection<PropertyListItem> PropertiesCollection { get; } = new ObservableCollection<PropertyListItem>(); 
 
         public PropertyListPage()
         {
             InitializeComponent();
 
-            MockRepository = TinyIoCContainer.Current.Resolve<IRepository>();
-            Properties = new ObservableCollection<Property>(MockRepository.GetProperties());
+            Repository = TinyIoCContainer.Current.Resolve<IRepository>();
+            LoadProperties();
             BindingContext = this; 
         }
 
@@ -27,19 +27,30 @@ namespace RealEstateApp
         {
             base.OnAppearing();
 
-            Properties = new ObservableCollection<Property>(MockRepository.GetProperties());
+            LoadProperties();
         }
 
         void OnRefresh(object sender, EventArgs e)
         {
             var list = (ListView)sender;
-            Properties = new ObservableCollection<Property>(MockRepository.GetProperties());
+            LoadProperties();
             list.IsRefreshing = false;
+        }
+
+        void LoadProperties()
+        {
+            PropertiesCollection.Clear();
+            var items = Repository.GetProperties();
+
+            foreach (Property item in items)
+            {
+                PropertiesCollection.Add(new PropertyListItem(item));
+            }
         }
 
         private async void ItemsListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            await Navigation.PushAsync(new PropertyDetailPage(e.Item as Property));
+            await Navigation.PushAsync(new PropertyDetailPage(e.Item as PropertyListItem));
         }
 
         private async void AddProperty_Clicked(object sender, EventArgs e)

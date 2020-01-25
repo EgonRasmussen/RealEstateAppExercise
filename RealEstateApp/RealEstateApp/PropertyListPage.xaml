@@ -21,7 +21,7 @@
             IsRefreshing="{Binding IsBusy, Mode=OneWay}"
             Refreshing="OnRefresh"
             ItemTapped="ItemsListView_ItemTapped"
-            ItemsSource="{Binding Properties}"
+            ItemsSource="{Binding PropertiesCollection}"
             VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -40,7 +40,7 @@
                                 Aspect="AspectFit"
                                 HeightRequest="120"
                                 HorizontalOptions="Start"
-                                Source="{Binding MainImageUrl}" />
+                                Source="{Binding Property.MainImageUrl}" />
                             <Grid Grid.Column="1" Margin="0,0,10,0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
@@ -54,13 +54,13 @@
                                     FontSize="16"
                                     LineBreakMode="TailTruncation"
                                     Style="{DynamicResource ListItemTextStyle}"
-                                    Text="{Binding Address}" />
+                                    Text="{Binding Property.Address}" />
                                 <Label
                                     Grid.Row="1"
                                     FontSize="13"
                                     LineBreakMode="NoWrap"
                                     Style="{DynamicResource ListItemDetailTextStyle}"
-                                    Text="{Binding Price, StringFormat='{0:C0}'}" />
+                                    Text="{Binding Property.Price, StringFormat='{0:C0}'}" />
                                 <Grid Grid.Row="2">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
@@ -101,7 +101,7 @@
                                 <Label
                                     Grid.Row="3"
                                     FontSize="13"
-                                    Text="{Binding LandSize, StringFormat='Land Size: {0} &#x33a1;'}" />
+                                    Text="{Binding Property.LandSize, StringFormat='Land Size: {0} &#x33a1;'}" />
                             </Grid>
                         </Grid>
                     </ViewCell>

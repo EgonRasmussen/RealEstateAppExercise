@@ -11,7 +11,7 @@ namespace RealEstateApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddEditPropertyPage : ContentPage
     {
-        private IRepository MockRepository;
+        private IRepository Repository;
 
         #region PROPERTIES
         public ObservableCollection<Agent> Agents { get; }
@@ -55,8 +55,8 @@ namespace RealEstateApp
         {
             InitializeComponent();
 
-            MockRepository = TinyIoCContainer.Current.Resolve<IRepository>();
-            Agents = new ObservableCollection<Agent>(MockRepository.GetAgents());
+            Repository = TinyIoCContainer.Current.Resolve<IRepository>();
+            Agents = new ObservableCollection<Agent>(Repository.GetAgents());
 
             if (property == null)
             {
@@ -81,7 +81,7 @@ namespace RealEstateApp
             }
             else
             {
-                MockRepository.SaveProperty(Property);
+                Repository.SaveProperty(Property);
                 await Navigation.PopToRootAsync();
             }   
         }

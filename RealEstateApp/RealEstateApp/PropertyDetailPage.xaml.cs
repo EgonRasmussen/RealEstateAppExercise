@@ -10,14 +10,14 @@ namespace RealEstateApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PropertyDetailPage : ContentPage
     {
-        public PropertyDetailPage(Property property)
+        public PropertyDetailPage(PropertyListItem propertyListItem)
         {
             InitializeComponent();
 
-            Property = property;
+            Property = propertyListItem.Property;
 
-            IRepository MockRepository = TinyIoCContainer.Current.Resolve<IRepository>();
-            Agent = MockRepository.GetAgents().FirstOrDefault(x => x.Id == Property.AgentId);
+            IRepository Repository = TinyIoCContainer.Current.Resolve<IRepository>();
+            Agent = Repository.GetAgents().FirstOrDefault(x => x.Id == Property.AgentId);
 
             BindingContext = this;
         }
