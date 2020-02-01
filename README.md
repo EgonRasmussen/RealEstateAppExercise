@@ -1,4 +1,4 @@
-# RealEsteteApp Opgaven
+# RealEstateApp Opgaven
 
 Dette repository indeholder opgaven løst på forskellige niveauer:
 
