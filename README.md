@@ -1,6 +1,6 @@
 # RealEstateApp Opgaven
 
-Dette repository indeholder opgaven løst på forskellige niveauer:
+Dette repository indeholder opgaven løst på forskellige niveauer, svarende til disse branches:
 
 - 1.2.EmptyUIpages
 - 1.3 UInoCodeBehind
