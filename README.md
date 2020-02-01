@@ -1,11 +1,7 @@
-# RealEsteteApp uden uI
+# RealEsteteApp Opgaven
 
-[TinyIoC](https://github.com/grumpydev/TinyIoC/wiki)
+Dette repository indeholder opgaven løst på forskellige niveauer:
 
-[Simple way to use icon fonts in Xamarin Forms projects](https://trailheadtechnology.com/simple-way-to-use-icon-fonts-in-xamarin-forms-projects/)
-
-[Font Awesom Font on Xamarin.Forms](https://medium.com/@tsjdevapps/use-fontawesome-in-a-xamarin-forms-app-2edf25311db4)
-
-
-
-Begynd med at kontrollere at der kan hentes en collection af Property objekter i PropertyListPage.
+- 1.2.EmptyUIpages
+- 1.3 UInoCodeBehind
+- 1.4 Basic (den færdige opgave, nu klar til at indbygge Essentials)
