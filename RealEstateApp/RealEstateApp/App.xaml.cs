@@ -3,7 +3,6 @@ using RealEstateApp.Services.Repository;
 using TinyIoC;
 using Xamarin.Forms;
 
-
 namespace RealEstateApp
 {
     public partial class App : Application

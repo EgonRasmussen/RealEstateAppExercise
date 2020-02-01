@@ -4,7 +4,6 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:RealEstateApp.Converters"
-             xmlns:u="clr-namespace:RealEstateApp.Utils"
              mc:Ignorable="d"
              x:Class="RealEstateApp.AddEditPropertyPage"
              Title="{Binding Title}">
@@ -19,8 +18,7 @@
             <Label
                 BackgroundColor="{Binding StatusColor}"
                 IsVisible="{Binding StatusMessage, Converter={converters:StringBoolConverter}}"
-                Text="{Binding StatusMessage}"
-                TextColor="{Binding StatusColor, Converter={converters:ForegroundColorConverter}}" />
+                Text="{Binding StatusMessage}" />
             <ScrollView VerticalOptions="FillAndExpand">
                 <StackLayout Padding="15" Spacing="20">
                     <Label
