@@ -13,30 +13,10 @@ namespace RealEstateApp
     {
         private IRepository Repository;
 
-        #region PROPERTIES
-
-        #endregion
-
         public AddEditPropertyPage(Property property = null)
         {
             InitializeComponent();
 
-           
-        }
-
-        private async void SaveProperty_Clicked(object sender, System.EventArgs e)
-        {
-            
-        }
-
-        public bool IsValid()
-        {
-           
-            return true;
-        }
-
-        private async void CancelSave_Clicked(object sender, System.EventArgs e)
-        {
            
         }
     }

@@ -14,12 +14,7 @@ namespace RealEstateApp
         {
             InitializeComponent();
 
-
         }
-
-
-        private async void EditProperty_Clicked(object sender, System.EventArgs e)
-        {
 
     }
 }

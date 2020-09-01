@@ -12,7 +12,6 @@ namespace RealEstateApp
     public partial class PropertyListPage : ContentPage
     {
         IRepository Repository;
-        public ObservableCollection<PropertyListItem> PropertiesCollection { get; } = new ObservableCollection<PropertyListItem>(); 
 
         public PropertyListPage()
         {
@@ -22,31 +21,5 @@ namespace RealEstateApp
 
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-
-        }
-
-        void OnRefresh(object sender, EventArgs e)
-        {
-
-        }
-
-        void LoadProperties()
-        {
-
-        }
-
-        private async void ItemsListView_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-
-        }
-
-        private async void AddProperty_Clicked(object sender, EventArgs e)
-        {
-
-        }    
     }
 }
