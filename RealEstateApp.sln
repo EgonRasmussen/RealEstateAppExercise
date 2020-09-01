@@ -9,10 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstateApp.Android", "Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstateApp.iOS", "RealEstateApp\RealEstateApp.iOS\RealEstateApp.iOS.csproj", "{DB02D203-6C29-42FE-B18A-4106ADCCE747}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstateApp", "RealEstateApp\RealEstateApp\RealEstateApp.csproj", "{8177E31C-42B9-447B-A4D6-0596C5373E0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstateApp", "RealEstateApp\RealEstateApp\RealEstateApp.csproj", "{8177E31C-42B9-447B-A4D6-0596C5373E0F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{43B1C508-F9FB-4B7E-9A5D-7E894CDD584A}"
 	ProjectSection(SolutionItems) = preProject
+		C:\Users\Egon Rasmussen\Dropbox\Billeder\iLearn billeder\AppProg2\1. RealEstateApp\About.png = C:\Users\Egon Rasmussen\Dropbox\Billeder\iLearn billeder\AppProg2\1. RealEstateApp\About.png
+		C:\Users\Egon Rasmussen\Dropbox\Billeder\iLearn billeder\AppProg2\1. RealEstateApp\Add.png = C:\Users\Egon Rasmussen\Dropbox\Billeder\iLearn billeder\AppProg2\1. RealEstateApp\Add.png
+		C:\Users\Egon Rasmussen\Dropbox\Billeder\iLearn billeder\AppProg2\1. RealEstateApp\DetailView.png = C:\Users\Egon Rasmussen\Dropbox\Billeder\iLearn billeder\AppProg2\1. RealEstateApp\DetailView.png
+		C:\Users\Egon Rasmussen\Dropbox\Billeder\iLearn billeder\AppProg2\1. RealEstateApp\EditView.png = C:\Users\Egon Rasmussen\Dropbox\Billeder\iLearn billeder\AppProg2\1. RealEstateApp\EditView.png
+		C:\Users\Egon Rasmussen\Dropbox\Billeder\iLearn billeder\AppProg2\1. RealEstateApp\PropertiesList.png = C:\Users\Egon Rasmussen\Dropbox\Billeder\iLearn billeder\AppProg2\1. RealEstateApp\PropertiesList.png
 		README.md = README.md
 		SeedingRepository.txt = SeedingRepository.txt
 	EndProjectSection

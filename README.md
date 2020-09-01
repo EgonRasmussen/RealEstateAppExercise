@@ -1,38 +1,11 @@
-# RealEstateApp Basic 
+# Opgave 1.4 - RealEstateApp projektet, komplet og klar til Essentials
+Denne opgave går ud på at lave en ejendomsmægler app kaldet RealEstateApp. Den laves i Xamarin.Forms og har to formål: Træning i grundlæggende app-programmering samt at have et projekt, hvor det giver god mening at indbygge forskellige sensorer.  App'en har følgende skærmbilleder:
 
-[TinyIoC](https://github.com/grumpydev/TinyIoC/wiki)
+| ![Properties List](images/PropertiesList.png) PropertyListPage | ![Detail View](images/DetailView.png) PropertyDetailPage | ![Edit View](images/EditView.png) AddEditPage (EDIT) |  
+|---|---|---|
+|---|---|---|
+| ![Add](images/Add.png) AddEditPage (ADD) | ![Flyout Menu](images/FlyoutMenu.png) MenuPage | ![About](images/About.png) AboutPage |  
+|   |   |   |  
+|   |   |   | 
 
-[Simple way to use icon fonts in Xamarin Forms projects](https://trailheadtechnology.com/simple-way-to-use-icon-fonts-in-xamarin-forms-projects/)
-
-[Font Awesom Font on Xamarin.Forms](https://medium.com/@tsjdevapps/use-fontawesome-in-a-xamarin-forms-app-2edf25311db4)
-
-Projektet, inden der anvendes Essentials.
-
-
-IconFont på iOS: Kopier font til Resources og kontrollér BuildAction = BuildResource.
-I Info.plist tilføjes følgende:
-```xml
-<key>UIAppFonts</key>
-    <array>
-      <string>fa-solid-900.ttf</string>
-    </array>
-```
-
-Bemærk kun én font her!
-
-I App.xaml tilføjes en style:
-```xml
-<Style x:Key="IconFont" TargetType="{x:Type Label}">
-    <Setter Property="FontFamily">
-        <Setter.Value>
-            <OnPlatform x:TypeArguments="x:String">
-                <On Platform="Android">fa-solid-900.ttf#Font Awesome 5 Free Solid</On>
-                <On Platform="iOS">Font Awesome 5 Free</On>
-                <!--<On Platform="UWP">/Assets/fa-solid-900.ttf#Font Awesome 5 Free</On>-->
-            </OnPlatform>
-        </Setter.Value>
-    </Setter>
-</Style>
-```
-
-Bemærk at det er Font-navnet, men undtagen "Solid" der skal angives ved iOS!
+Denne færdige branch hedder 1.4.Basic og rummer den færdige RealEstateApp klar til at få indbygget forskellige kald til Essentials.
