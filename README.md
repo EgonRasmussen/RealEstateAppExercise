@@ -32,3 +32,12 @@ Man kan også lave Save-eventhandleren og i første omgang få navigationen til at 
 Nu kan View'et laves med binding til Property og Agent.
 
 Hvis du har overskud til det, bør der laves noget validering af brugerinput.
+
+### UI
+
+| ![Properties List](images/PropertiesList.png) PropertyListPage | ![Detail View](images/DetailView.png) PropertyDetailPage | ![Edit View](images/EditView.png) AddEditPage (EDIT) |  
+|---|---|---|
+|---|---|---|
+| ![Add](images/Add.png) AddEditPage (ADD) | ![Flyout Menu](images/FlyoutMenu.png) MenuPage | ![About](images/About.png) AboutPage |  
+|   |   |   |  
+|   |   |   | 
