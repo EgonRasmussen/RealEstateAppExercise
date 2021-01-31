@@ -35,13 +35,11 @@
                 FontAttributes="Bold"
                 FontSize="16"
                 LineBreakMode="NoWrap"
-                Style="{DynamicResource ListItemTextStyle}"
                 Text="{Binding Property.Price, StringFormat='{0:C0}'}" />
             <Label
                 Grid.Row="2"
                 FontSize="16"
                 LineBreakMode="NoWrap"
-                Style="{DynamicResource ListItemDetailTextStyle}"
                 Text="{Binding Property.Address}" />
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>

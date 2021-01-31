@@ -54,13 +54,11 @@
                                     FontAttributes="Bold"
                                     FontSize="16"
                                     LineBreakMode="TailTruncation"
-                                    Style="{DynamicResource ListItemTextStyle}"
                                     Text="{Binding Property.Address}" />
                                 <Label
                                     Grid.Row="1"
                                     FontSize="13"
                                     LineBreakMode="NoWrap"
-                                    Style="{DynamicResource ListItemDetailTextStyle}"
                                     Text="{Binding Property.Price, StringFormat='{0:C0}'}" />
                                 <Grid Grid.Row="2">
                                     <Grid.ColumnDefinitions>
