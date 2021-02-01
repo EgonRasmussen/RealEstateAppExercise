@@ -13,17 +13,8 @@
     </ContentPage.ToolbarItems>
 
     <ScrollView VerticalOptions="FillAndExpand">
-        <Grid Padding="15">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+              Padding="15">
             <Image
                 Grid.Row="0"
                 Margin="-10,-10,-10,0"
@@ -41,16 +32,8 @@
                 FontSize="16"
                 LineBreakMode="NoWrap"
                 Text="{Binding Property.Address}" />
-            <Grid Grid.Row="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+            <Grid Grid.Row="3"
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
                 <Label
                     Grid.Column="0"
                     FontSize="16"
@@ -112,12 +95,8 @@
                     Source="{Binding Agent.ImageUrl}"
                     VerticalOptions="Start"
                     WidthRequest="100" />
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+                <Grid Grid.Column="1"
+                      RowDefinitions="Auto,Auto,Auto">
                     <Label
                         Grid.Row="0"
                         FontAttributes="Bold"
